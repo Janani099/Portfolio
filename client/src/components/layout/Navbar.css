@@ -1,0 +1,84 @@
+:root {
+  --primary: #007fff;
+}
+
+.nav {
+  padding: -0.5rem 0;
+  background-color: black;
+}
+
+.ham-menu {
+  display: none;
+}
+
+.nav-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #fff;
+  margin-left: -20px;
+}
+.logo span {
+  color: rgb(0, 132, 255);
+}
+.nav-list {
+  display: flex;
+  align-items: center;
+  margin-right: -30px;
+}
+.nav-item :not(:last-child) {
+  margin-left: 0.5rem;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 300ms ease-in-out;
+}
+
+.nav-link:hover {
+  background-color: rgb(0, 132, 255);
+}
+
+@media only screen and (max-width: 900px) {
+  .ham-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  .nav-list {
+    position: fixed;
+    top: 10%;
+    left: -100%;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    padding: 1rem 0;
+    transition: all 300ms ease-in-out;
+  }
+
+  .nav-list.active {
+    left: 0%;
+  }
+
+  .nav-item {
+    margin: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    width: 100%;
+  }
+}

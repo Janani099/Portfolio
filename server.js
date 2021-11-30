@@ -11,9 +11,10 @@ const passport = require('passport');
 const post = require('./routes/api/post');
 const profile = require('./routes/api/profile');
 const users = require('./routes/api/users');
+var cors = require('cors');
 
 const app = express();
-
+app.use(cors());
 //body parser middleware
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
@@ -37,6 +38,7 @@ mongoose
 
 //passport middlware
 app.use(passport.initialize());
+
 //passport config
 
 require('./config/passport')(passport);
